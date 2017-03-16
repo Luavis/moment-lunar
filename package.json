@@ -1,0 +1,31 @@
+{
+  "name": "moment-lunar",
+  "version": "0.0.1",
+  "description": "A lunar calendar extension for moment.js",
+  "main": "moment-lunar.js",
+  "dependencies": {
+    "moment": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luavis/moment-lunar.git"
+  },
+  "keywords": [
+    "lunar",
+    "moment",
+    "calendar",
+    "date",
+    "conversion",
+    "convert"
+  ],
+  "author": "Luavis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luavis/moment-lunar/issues"
+  },
+  "homepage": "https://github.com/Luavis/moment-lunar#readme"
+}
