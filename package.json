@@ -1,6 +1,6 @@
 {
   "name": "moment-lunar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lunar calendar extension for moment.js",
   "main": "moment-lunar.js",
   "dependencies": {
