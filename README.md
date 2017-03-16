@@ -16,7 +16,7 @@ $ npm install moment-lunar
 
 ## Usage
 ```js
-moment().year(1995).month(2).date(9).lunar().format('YYYY-MM-DD');  // convert to 1995-03-09
+moment().year(1995).month(2).date(9).lunar().format('YYYY-MM-DD');  // convert to 1995-02-09 (1995/03/09 was 1995/02/29 in lunar calendar)
 moment().year(2017).month(0).date(1).solar().format('YYYY-MM-DD');  // get lunar new year's day
 ```
 
