@@ -1,3 +1,5 @@
+[![NPM version][npm-version-image]][npm-url] [![MIT License][license-image]][license-url]
+
 moment-lunar
 ===
 
@@ -21,3 +23,9 @@ moment().year(2017).month(0).date(1).solar().format('YYYY-MM-DD');  // get lunar
 ## License
 
 MIT
+
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+
+[npm-url]: https://npmjs.org/package/moment-lunar
+[npm-version-image]: http://img.shields.io/npm/v/moment-lunar.svg?style=flat
