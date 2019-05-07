@@ -6,15 +6,19 @@
 
 'use strict';
 
-
-(function () {
-    var moment;
-    moment = (typeof require !== 'undefined' && require !== null)
-    && !require.amd
-    ? require('moment')
-    : this.moment;
-
-    var lunarMonthday =  [
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['moment'], function (moment) {
+            root.moment = factory(moment)
+            return root.moment
+        })
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('moment'))
+    } else {
+        root.moment = factory(root.moment)
+    }
+})(this, function (moment) {
+    var lunarMonthday = [
         1887, 0x1694, 0x16aa, 0x4ad5,
         0xab6, 0xc4b7, 0x4ae, 0xa56, 0xb52a, 0x1d2a, 0xd54, 0x75aa, 0x156a,
         0x1096d, 0x95c, 0x14ae, 0xaa4d, 0x1a4c, 0x1b2a, 0x8d55, 0xad4,
@@ -148,7 +152,7 @@
         var m = getBitInt(solar11, 4, 5);
         var d = getBitInt(solar11, 5, 0);
         var offset = solarToInt(this.year(), this.month() + 1,
-                this.date()) - solarToInt(y, m, d);
+            this.date()) - solarToInt(y, m, d);
 
         var days = lunarMonthday[index];
         var leap = getBitInt(days, 4, 13);
@@ -170,12 +174,14 @@
         if (leap != 0 && lunarM + 1 > leap) {
             lunarM--;
             if (lunarM + 1 == leap) {
-                this.isLeanMonth = function() {return true};
+                this.isLeanMonth = function () { return true };
             }
         }
 
         return this.year(lunarY).month(lunarM).date(lunarD);
     }
 
-    moment.fn.isLeanMonth = function() {return false;}
-}).call(this)
+    moment.fn.isLeanMonth = function () { return false; }
+
+    return moment;
+})

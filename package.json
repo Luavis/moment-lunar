@@ -1,20 +1,24 @@
 {
   "name": "moment-lunar",
-  "version": "0.0.2",
-  "description": "A lunar calendar extension for moment.js",
+  "version": "0.0.4",
+  "description": "Moment.js plugin for chinese lunar calendar",
   "main": "moment-lunar.js",
   "dependencies": {
     "moment": "^2.17.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "uglifyjs": "^2.4.11"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs moment-lunar.js -c -m --source-map -o moment-lunar.min.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Luavis/moment-lunar.git"
   },
   "keywords": [
+    "chinese",
     "lunar",
     "moment",
     "calendar",
